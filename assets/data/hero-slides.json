@@ -1,0 +1,39 @@
+{
+  "heroSlides": [
+    {
+      "id": "cyberpunk-2077",
+      "title": "Cyberpunk 2077",
+      "description": "An open-world action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification.",
+      "image": "assets/images/cyberpunk-2077.jpg",
+      "alt": "Cyberpunk 2077 game cover"
+    },
+    {
+      "id": "elden-ring",
+      "title": "Elden Ring",
+      "description": "An action RPG set in a vast fantasy world where you'll face challenging battles and discover ancient secrets.",
+      "image": "assets/images/elden-ring.jpg",
+      "alt": "Elden Ring game cover"
+    },
+    {
+      "id": "god-of-war-ragnarok",
+      "title": "God of War Ragnarök",
+      "description": "Kratos and Atreus must journey to each of the Nine Realms in search of answers as Asgardian forces prepare for war.",
+      "image": "assets/images/god-of-war-ragnarok.jpg",
+      "alt": "God of War Ragnarök game cover"
+    },
+    {
+      "id": "spider-man-2",
+      "title": "Marvel's Spider-Man 2",
+      "description": "Swing through the streets of New York as both Peter Parker and Miles Morales in this epic superhero adventure.",
+      "image": "assets/images/spider-man-2.jpg",
+      "alt": "Marvel's Spider-Man 2 game cover"
+    },
+    {
+      "id": "starfield",
+      "title": "Starfield",
+      "description": "Explore the vast reaches of space in this next-generation role-playing game set among the stars.",
+      "image": "assets/images/starfield.jpg",
+      "alt": "Starfield game cover"
+    }
+  ]
+}

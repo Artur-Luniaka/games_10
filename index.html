@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixelVault - Premium Gaming Store</title>
+    <meta
+      name="description"
+      content="Discover the latest PC and Xbox games at PixelVault. Premium gaming experience with exclusive titles and competitive prices."
+    />
+    <link rel="stylesheet" href="assets/styles/core.css" />
+    <link rel="stylesheet" href="assets/styles/header.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/homepage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main>
+      <section id="hero-showcase" class="hero-section">
+        <div class="hero-slider-container">
+          <div class="hero-slider-track">
+            <!-- Slides will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="action-btn primary-action" data-action="explore">
+            Explore Collection
+          </button>
+          <button class="action-btn secondary-action" data-action="newsletter">
+            Join Newsletter
+          </button>
+        </div>
+      </section>
+      <section id="achievement-wall" class="section-achievement-wall">
+        <h2 class="section-title">Achievement Wall</h2>
+        <div class="achievements-container">
+          <!-- Achievement cards will go here -->
+          <div class="achievement-card locked">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-title">First Purchase</div>
+            <div class="achievement-desc">Complete your first order!</div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">🎮</div>
+            <div class="achievement-title">Gamer Pro</div>
+            <div class="achievement-desc">Buy 10+ games in our store.</div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">💬</div>
+            <div class="achievement-title">Community Star</div>
+            <div class="achievement-desc">Leave your first review.</div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">⚡</div>
+            <div class="achievement-title">Speedrunner</div>
+            <div class="achievement-desc">
+              Complete a game within a week of purchase.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="community-powerups" class="section-community-powerups">
+        <h2 class="section-title">Community Power-Ups</h2>
+        <div class="powerups-container">
+          <div class="powerup-card powerup-meme">
+            <div class="powerup-icon">🔥</div>
+            <div class="powerup-title">Meme of the Week</div>
+            <div class="powerup-content">
+              "When you finally beat the boss on hard mode!"
+            </div>
+            <div class="powerup-extra">
+              256 <span class="like-emoji">👍</span>
+            </div>
+          </div>
+          <div class="powerup-card powerup-review">
+            <div class="powerup-icon">🌟</div>
+            <div class="powerup-title">Top Review</div>
+            <div class="powerup-content">
+              "Best store ever! Fast delivery, great prices."
+            </div>
+            <div class="powerup-extra">Featured</div>
+          </div>
+          <div class="powerup-card powerup-guide">
+            <div class="powerup-icon">📖</div>
+            <div class="powerup-title">Best Guide</div>
+            <div class="powerup-content">"How to speedrun like a pro"</div>
+            <div class="powerup-extra">New!</div>
+          </div>
+          <div class="powerup-card powerup-activity">
+            <div class="powerup-icon">💬</div>
+            <div class="powerup-title">Active Member</div>
+            <div class="powerup-content">120+ posts this month</div>
+            <div class="powerup-extra"><span class="fire-emoji">🔥</span></div>
+          </div>
+        </div>
+      </section>
+      <section id="speedrun-leaderboard" class="section-speedrun-leaderboard">
+        <h2 class="section-title">Speedrun Leaderboard</h2>
+        <div class="leaderboard-subtitle">Who's the fastest gamer?</div>
+        <div class="leaderboard-table">
+          <div class="leader-row leader-header">
+            <div class="leader-place">#</div>
+            <div class="leader-nick">Player</div>
+            <div class="leader-game">Game</div>
+            <div class="leader-time">Time</div>
+            <div class="leader-progress">Progress</div>
+          </div>
+          <div class="leader-row leader-top1">
+            <div class="leader-place">1</div>
+            <div class="leader-nick">SpeedyFox</div>
+            <div class="leader-game">Elden Ring</div>
+            <div class="leader-time">2h 14m</div>
+            <div class="leader-progress">
+              <div class="progress-bar" style="width: 98%"></div>
+            </div>
+          </div>
+          <div class="leader-row leader-top2">
+            <div class="leader-place">2</div>
+            <div class="leader-nick">XxShadowxX</div>
+            <div class="leader-game">Starfield</div>
+            <div class="leader-time">2h 37m</div>
+            <div class="leader-progress">
+              <div class="progress-bar" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="leader-row leader-top3">
+            <div class="leader-place">3</div>
+            <div class="leader-nick">PixelQueen</div>
+            <div class="leader-game">God of War</div>
+            <div class="leader-time">2h 50m</div>
+            <div class="leader-progress">
+              <div class="progress-bar" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="leader-row">
+            <div class="leader-place">4</div>
+            <div class="leader-nick">NeoRunner</div>
+            <div class="leader-game">Cyberpunk 2077</div>
+            <div class="leader-time">3h 05m</div>
+            <div class="leader-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="leader-row">
+            <div class="leader-place">5</div>
+            <div class="leader-nick">GameGuru</div>
+            <div class="leader-game">Spider-Man 2</div>
+            <div class="leader-time">3h 22m</div>
+            <div class="leader-progress">
+              <div class="progress-bar" style="width: 72%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mystery-box-drop" class="section-mystery-box">
+        <h2 class="section-title">Mystery Box Drop</h2>
+        <div class="mystery-desc">
+          Open a box and get a random reward — discounts, games, or exclusive
+          bonuses!
+        </div>
+        <div class="mystery-boxes">
+          <div class="mystery-box">
+            <div class="box-visual">🎁</div>
+            <button class="box-open-btn">Open</button>
+            <div class="box-reward">?</div>
+          </div>
+          <div class="mystery-box">
+            <div class="box-visual">🕹️</div>
+            <button class="box-open-btn">Open</button>
+            <div class="box-reward">?</div>
+          </div>
+          <div class="mystery-box">
+            <div class="box-visual">💎</div>
+            <button class="box-open-btn">Open</button>
+            <div class="box-reward">?</div>
+          </div>
+          <div class="mystery-box">
+            <div class="box-visual">🎮</div>
+            <button class="box-open-btn">Open</button>
+            <div class="box-reward">?</div>
+          </div>
+        </div>
+      </section>
+      <section id="patch-notes" class="section-patch-notes">
+        <h2 class="section-title">Patch Notes & Updates</h2>
+        <div class="patch-desc">
+          Stay up to date with the latest game updates, features, and bug fixes!
+        </div>
+        <div class="patch-cards">
+          <div class="patch-card patch-new">
+            <div class="patch-icon">🆕</div>
+            <div class="patch-title">New Co-op Mode</div>
+            <div class="patch-meta">Elden Ring &middot; 2024-06-01</div>
+            <div class="patch-text">
+              Play with friends in the brand new online co-op mode!
+            </div>
+          </div>
+          <div class="patch-card patch-fix">
+            <div class="patch-icon">🛠️</div>
+            <div class="patch-title">Bug Fixes</div>
+            <div class="patch-meta">Starfield &middot; 2024-05-28</div>
+            <div class="patch-text">
+              Resolved crash on startup and improved performance on Xbox.
+            </div>
+          </div>
+          <div class="patch-card patch-improve">
+            <div class="patch-icon">✨</div>
+            <div class="patch-title">UI Improvements</div>
+            <div class="patch-meta">God of War &middot; 2024-05-25</div>
+            <div class="patch-text">
+              Inventory and map screens redesigned for better usability.
+            </div>
+          </div>
+          <div class="patch-card patch-new">
+            <div class="patch-icon">🎉</div>
+            <div class="patch-title">Seasonal Event</div>
+            <div class="patch-meta">Cyberpunk 2077 &middot; 2024-05-20</div>
+            <div class="patch-text">
+              Join the summer event and unlock exclusive rewards!
+            </div>
+          </div>
+        </div>
+        <button class="patch-subscribe-btn" id="patch-subscribe-btn">
+          Subscribe to Updates
+        </button>
+        <form
+          class="patch-subscribe-form"
+          id="patch-subscribe-form"
+          style="display: none"
+          autocomplete="off"
+        >
+          <input
+            type="email"
+            id="patch-email"
+            placeholder="Your email"
+            required
+          />
+          <button type="submit" id="patch-subscribe-submit">Subscribe</button>
+          <span
+            class="patch-subscribe-success"
+            id="patch-subscribe-success"
+            style="display: none"
+            >Thank you!</span
+          >
+        </form>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script
+      type="module"
+      src="assets/scripts/modules/header-injector.js"
+    ></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/header-offcanvas.js"
+    ></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/footer-injector.js"
+    ></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/hero-showcase.js"
+    ></script>
+    <script type="module" src="assets/scripts/modules/mystery-box.js"></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/patch-subscribe.js"
+    ></script>
+  </body>
+</html>

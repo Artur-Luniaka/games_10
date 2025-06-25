@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - PixelVault</title>
+    <meta
+      name="description"
+      content="Review your shopping cart and proceed to checkout."
+    />
+    <link rel="stylesheet" href="assets/styles/core.css" />
+    <link rel="stylesheet" href="assets/styles/header.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/cart.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main class="cart-main">
+      <div class="container">
+        <div class="cart-header">
+          <h1 class="cart-title">Shopping Cart</h1>
+          <nav class="breadcrumb-nav">
+            <a href="index.html" class="breadcrumb-link">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Cart</span>
+          </nav>
+        </div>
+
+        <div class="cart-content">
+          <div class="cart-items-section">
+            <div class="cart-items-header">
+              <h2 class="section-title">Cart Items</h2>
+              <span class="items-count" id="items-count">0 items</span>
+            </div>
+
+            <div class="cart-items-container" id="cart-items-container">
+              <!-- Cart items will be dynamically loaded here -->
+            </div>
+
+            <div class="cart-actions">
+              <button
+                class="btn-continue-shopping"
+                onclick="window.location.href='catalog.html'"
+              >
+                <span class="btn-icon">←</span>
+                Continue Shopping
+              </button>
+              <button class="btn-clear-cart" id="btn-clear-cart">
+                Clear Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="cart-summary-section">
+            <div class="cart-summary-card">
+              <h3 class="summary-title">Order Summary</h3>
+
+              <div class="summary-items" id="summary-items">
+                <!-- Summary items will be dynamically loaded -->
+              </div>
+
+              <div class="summary-totals">
+                <div class="total-row">
+                  <span class="total-label">Subtotal</span>
+                  <span class="total-value" id="subtotal">$0.00</span>
+                </div>
+                <div class="total-row">
+                  <span class="total-label">Tax</span>
+                  <span class="total-value" id="tax">$0.00</span>
+                </div>
+                <div class="total-row total-final">
+                  <span class="total-label">Total</span>
+                  <span class="total-value" id="total">$0.00</span>
+                </div>
+              </div>
+
+              <div class="summary-actions">
+                <button class="btn-checkout" id="btn-checkout">
+                  <span class="btn-text">Proceed to Checkout</span>
+                  <span class="btn-icon">→</span>
+                </button>
+              </div>
+
+              <div class="payment-methods">
+                <div class="payment-method">
+                  <span class="method-icon">💳</span>
+                  <span class="method-text">Credit Card</span>
+                </div>
+                <div class="payment-method">
+                  <span class="method-icon">🏦</span>
+                  <span class="method-text">Bank Transfer</span>
+                </div>
+                <div class="payment-method">
+                  <span class="method-icon">📱</span>
+                  <span class="method-text">Digital Wallet</span>
+                </div>
+              </div>
+
+              <div class="security-info">
+                <div class="security-item">
+                  <span class="security-icon">🔒</span>
+                  <span class="security-text">Secure Payment</span>
+                </div>
+                <div class="security-item">
+                  <span class="security-icon">🛡️</span>
+                  <span class="security-text">SSL Encrypted</span>
+                </div>
+                <div class="security-item">
+                  <span class="security-icon">🔄</span>
+                  <span class="security-text">30-Day Return</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recommended-section">
+          <h2 class="section-title">You Might Also Like</h2>
+          <div class="recommended-grid" id="recommended-grid">
+            <!-- Recommended games will be dynamically loaded -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script
+      type="module"
+      src="assets/scripts/modules/header-injector.js"
+    ></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/footer-injector.js"
+    ></script>
+    <script type="module" src="assets/scripts/modules/cart-manager.js"></script>
+  </body>
+</html>

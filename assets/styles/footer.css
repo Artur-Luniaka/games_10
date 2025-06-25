@@ -1,0 +1,146 @@
+/* Modern Footer Styles */
+.site-footer {
+  background: linear-gradient(90deg, #ffe082 60%, #6fd39e 100%);
+  color: #222;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  position: relative;
+}
+
+.footer-maxwidth {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 0 24px;
+}
+
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 48px 0 16px 0;
+}
+
+.footer-block {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.footer-block-title {
+  font-weight: 700;
+  color: #22b573;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #22b573;
+  text-decoration: underline;
+}
+
+.footer-logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 120px;
+}
+
+.footer-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(60, 179, 113, 0.1);
+  width: 64px;
+  height: 64px;
+  transition: box-shadow 0.2s;
+}
+
+.footer-logo-link:hover .footer-logo-bg,
+.footer-logo-link:focus .footer-logo-bg {
+  box-shadow: 0 4px 18px rgba(60, 179, 113, 0.18);
+}
+
+.footer-logo-img {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+}
+
+.footer-bottom-bar {
+  text-align: center;
+  font-size: 1rem;
+  color: #222;
+  padding: 12px 0 18px 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .footer-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 32px 0 8px 0;
+  }
+  .footer-block {
+    min-width: 0;
+  }
+  .footer-logo-block {
+    margin: 0 auto 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-maxwidth {
+    padding: 0 8px;
+  }
+  .footer-flex {
+    gap: 16px;
+    padding: 24px 0 4px 0;
+  }
+  .footer-block-title {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  .footer-bottom-bar {
+    font-size: 12px;
+    padding: 8px 0 12px 0;
+  }
+  .footer-logo-bg {
+    width: 72px;
+    height: 72px;
+  }
+  .footer-logo-img {
+    width: 64px;
+    height: 64px;
+    margin: 2px 0 2px 0;
+  }
+}
