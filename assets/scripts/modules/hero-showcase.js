@@ -211,17 +211,11 @@ class HeroShowcase {
   }
 
   scrollToNewsletter() {
-    const footer = document.querySelector(".site-footer");
-    if (footer) {
-      footer.scrollIntoView({ behavior: "smooth" });
-
-      // Focus on newsletter input after scroll
-      setTimeout(() => {
-        const newsletterInput = document.querySelector(".newsletter-input");
-        if (newsletterInput) {
-          newsletterInput.focus();
-        }
-      }, 1000);
+    const patchNotesSection = document.getElementById("patch-notes");
+    if (patchNotesSection) {
+      patchNotesSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("Patch Notes section not found");
     }
   }
 
