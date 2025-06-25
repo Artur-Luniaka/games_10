@@ -168,7 +168,7 @@ class CheckoutManager {
       this.clearCart();
 
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "./";
       }, 1400);
     } catch (error) {
       showNotification("Order processing failed. Please try again.", "error");

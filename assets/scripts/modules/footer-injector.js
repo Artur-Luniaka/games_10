@@ -18,7 +18,7 @@ class FooterInjector {
   }
 
   async fetchFooterTemplate() {
-    const response = await fetch("/components/footer.html");
+    const response = await fetch("components/footer.html");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

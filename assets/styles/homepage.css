@@ -900,3 +900,123 @@ main {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Cookie Consent Bar */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #22b573 0%, #ffb300 100%);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  z-index: 10000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 -4px 20px rgba(60, 179, 113, 0.2);
+}
+
+.cookie-consent.show {
+  transform: translateY(0);
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-text {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.cookie-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cookie-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 500;
+}
+
+.cookie-accept-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+
+.cookie-accept-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-accept-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design for Cookie Bar */
+@media (max-width: 768px) {
+  .cookie-consent {
+    padding: 1rem;
+  }
+
+  .cookie-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .cookie-text {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cookie-text p {
+    font-size: 0.9rem;
+  }
+
+  .cookie-accept-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-consent {
+    padding: 0.8rem;
+  }
+
+  .cookie-text p {
+    font-size: 0.85rem;
+  }
+
+  .cookie-accept-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}

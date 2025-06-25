@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PixelVault - Premium Gaming Store</title>
+    <title>PlayTheStackedThrill.com - Premium Gaming Store</title>
     <meta
       name="description"
-      content="Discover the latest PC and Xbox games at PixelVault. Premium gaming experience with exclusive titles and competitive prices."
+      content="Discover the latest PC and Xbox games at PlayTheStackedThrill.com. Premium gaming experience with exclusive titles and competitive prices."
     />
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/styles/core.css" />
     <link rel="stylesheet" href="assets/styles/header.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
@@ -255,6 +256,21 @@
 
     <div id="footer-container"></div>
 
+    <!-- Cookie Consent Bar -->
+    <div id="cookie-consent" class="cookie-consent">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <span class="cookie-icon">🍪</span>
+          <p>
+            We use cookies to enhance your gaming experience and provide
+            personalized content. By continuing to use our site, you agree to
+            our use of cookies.
+          </p>
+        </div>
+        <button id="cookie-accept" class="cookie-accept-btn">Accept</button>
+      </div>
+    </div>
+
     <script
       type="module"
       src="assets/scripts/modules/header-injector.js"
@@ -276,5 +292,13 @@
       type="module"
       src="assets/scripts/modules/patch-subscribe.js"
     ></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/cookie-consent.js"
+    ></script>
+    <script type="module">
+      import { CookieConsentManager } from "./assets/scripts/modules/cookie-consent.js";
+      new CookieConsentManager();
+    </script>
   </body>
 </html>

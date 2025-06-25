@@ -41,7 +41,7 @@ class GameDetailLoader {
       return;
     }
     // Title & Breadcrumb
-    document.title = `${this.gameData.title} - PixelVault`;
+    document.title = `${this.gameData.title} - PlayTheStackedThrill.com`;
     document.getElementById("game-title").textContent = this.gameData.title;
     document.getElementById("game-detail-title").textContent =
       this.gameData.title;
