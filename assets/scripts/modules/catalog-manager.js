@@ -1,3 +1,5 @@
+import { showNotification } from "./notification.js";
+
 // Catalog Manager Module
 class GameCatalogManager {
   constructor() {
@@ -128,7 +130,12 @@ class GameCatalogManager {
     // Проверяем, есть ли игра уже в корзине
     const existingItem = cart.find((item) => item.id === gameId);
     if (existingItem) {
-      existingItem.quantity += 1;
+      if (existingItem.quantity < 99) {
+        existingItem.quantity += 1;
+        showNotification("Game already in cart! Quantity increased.", "info");
+      } else {
+        showNotification("Maximum quantity reached in cart!", "info");
+      }
     } else {
       cart.push({
         id: gameId,
@@ -140,6 +147,7 @@ class GameCatalogManager {
         image: game.image,
         quantity: 1,
       });
+      showNotification("Game added to cart!", "success");
     }
 
     // Сохраняем корзину
@@ -147,9 +155,6 @@ class GameCatalogManager {
 
     // Обновляем счетчик
     this.updateCartCounter();
-
-    // Показываем уведомление
-    this.showNotification("Game added to cart!", "success");
   }
 
   updateCartCounter() {
@@ -170,45 +175,8 @@ class GameCatalogManager {
     return `<div class="empty-state">No games found.</div>`;
   }
 
-  showNotification(message, type = "info") {
-    const notification = document.createElement("div");
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: ${
-        type === "success"
-          ? "#22b573"
-          : type === "error"
-          ? "#d32f2f"
-          : "#ffb300"
-      };
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      z-index: 1000;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      font-weight: 500;
-    `;
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    setTimeout(() => {
-      notification.style.transform = "translateX(0)";
-    }, 100);
-    setTimeout(() => {
-      notification.style.transform = "translateX(100%)";
-      setTimeout(() => {
-        if (notification.parentNode)
-          notification.parentNode.removeChild(notification);
-      }, 300);
-    }, 2200);
-  }
-
   showErrorMessage(message) {
-    this.showNotification(message, "error");
+    showNotification(message, "error");
   }
 }
 

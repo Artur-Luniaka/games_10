@@ -1,3 +1,5 @@
+import { showNotification } from "./notification.js";
+
 // Cart Manager Module
 class CartManager {
   constructor() {
@@ -116,7 +118,7 @@ class CartManager {
   getEmptyCartHTML() {
     return `
       <div class="empty-cart">
-        <div class="empty-cart-icon">🛒</div>
+        <img src="assets/images/shop-cart.png" alt="Cart" class="empty-cart-icon-img">
         <h3 class="empty-cart-title">Your cart is empty</h3>
         <p class="empty-cart-text">Looks like you haven't added any games to your cart yet.</p>
         <button class="btn-start-shopping" onclick="window.location.href='catalog.html'">
@@ -190,7 +192,7 @@ class CartManager {
     this.saveCart();
     this.renderCart();
 
-    this.showNotification(`Removed ${removedItem.title} from cart`, "info");
+    showNotification(`Removed ${removedItem.title} from cart`, "info");
   }
 
   clearCart() {
@@ -199,7 +201,7 @@ class CartManager {
     this.cart = [];
     this.saveCart();
     this.renderCart();
-    this.showNotification("Cart cleared", "info");
+    showNotification("Cart cleared", "info");
   }
 
   updateSummary() {
@@ -293,6 +295,7 @@ class CartManager {
     }
 
     container.innerHTML = games
+      .slice(0, 3)
       .map(
         (game) => `
       <div class="recommended-item" onclick="window.location.href='game-detail.html?id=${
@@ -320,49 +323,8 @@ class CartManager {
     return shuffled;
   }
 
-  showNotification(message, type = "info") {
-    const notification = document.createElement("div");
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: ${
-        type === "success"
-          ? "#28a745"
-          : type === "error"
-          ? "#dc3545"
-          : "#17a2b8"
-      };
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      z-index: 1000;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      font-weight: 500;
-    `;
-    notification.textContent = message;
-
-    document.body.appendChild(notification);
-
-    // Animate in
-    setTimeout(() => {
-      notification.style.transform = "translateX(0)";
-    }, 100);
-
-    // Remove after 3 seconds
-    setTimeout(() => {
-      notification.style.transform = "translateX(100%)";
-      setTimeout(() => {
-        document.body.removeChild(notification);
-      }, 300);
-    }, 3000);
-  }
-
   showError(message) {
-    this.showNotification(message, "error");
+    showNotification(message, "error");
   }
 }
 

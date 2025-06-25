@@ -1,0 +1,50 @@
+/* Универсальные уведомления сайта */
+.site-notification {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: 90vw;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1em 2em;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(60, 179, 113, 0.13);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  animation: notif-fade-in 0.2s forwards, notif-fade-out 0.3s 1.5s forwards;
+}
+.site-notification.success {
+  background: linear-gradient(90deg, #22b573 60%, #ffb300 100%);
+  color: #fff;
+}
+.site-notification.info {
+  background: #444;
+  color: #fff;
+}
+.site-notification.error {
+  background: #d32f2f;
+  color: #fff;
+}
+@keyframes notif-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes notif-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
