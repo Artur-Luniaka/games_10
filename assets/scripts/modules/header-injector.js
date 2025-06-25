@@ -30,11 +30,12 @@ class NavigationInjector {
     if (this.headerContainer && this.headerTemplate) {
       this.headerContainer.innerHTML = this.headerTemplate;
       window.dispatchEvent(new Event("header-ready"));
+      this.syncCartCounter();
     }
   }
 
   setupCartButton() {
-    const cartButton = document.getElementById("cart-button");
+    const cartButton = document.getElementById("cart-btn");
     if (cartButton) {
       cartButton.addEventListener("click", () => {
         this.handleCartClick();
@@ -67,19 +68,13 @@ class NavigationInjector {
     window.location.href = "cart.html";
   }
 
-  updateCartCounter(count) {
-    const cartCounter = document.getElementById("cart-counter");
+  syncCartCounter() {
+    const cart = JSON.parse(localStorage.getItem("pixelVaultCart") || "[]");
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCounter = document.querySelector(".cart-count, .cart-counter");
     if (cartCounter) {
-      cartCounter.textContent = count;
-      if (count > 0) {
-        cartCounter.classList.add("show");
-        cartCounter.classList.add("animate");
-        setTimeout(() => {
-          cartCounter.classList.remove("animate");
-        }, 300);
-      } else {
-        cartCounter.classList.remove("show");
-      }
+      cartCounter.textContent = totalItems;
+      cartCounter.style.display = totalItems > 0 ? "block" : "none";
     }
   }
 }

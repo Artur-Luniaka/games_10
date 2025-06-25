@@ -30,4 +30,15 @@ window.addEventListener("header-ready", () => {
   cartBtn.addEventListener("click", () => {
     window.location.href = "cart.html";
   });
+
+  // Закрытие по клику вне меню
+  document.addEventListener("mousedown", (e) => {
+    if (
+      offcanvas.classList.contains("open") &&
+      !offcanvas.contains(e.target) &&
+      !burgerBtn.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
 });

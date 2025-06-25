@@ -19,7 +19,8 @@ class CartManager {
   async loadGamesData() {
     try {
       const response = await fetch("assets/data/games.json");
-      this.allGames = await response.json();
+      const data = await response.json();
+      this.allGames = data.games || [];
     } catch (error) {
       console.error("Error loading games data:", error);
       this.showError("Failed to load games data");
@@ -34,6 +35,12 @@ class CartManager {
   saveCart() {
     localStorage.setItem("pixelVaultCart", JSON.stringify(this.cart));
     this.updateCartCounter();
+    if (
+      window.headerInjector &&
+      typeof window.headerInjector.syncCartCounter === "function"
+    ) {
+      window.headerInjector.syncCartCounter();
+    }
   }
 
   setupEventListeners() {
