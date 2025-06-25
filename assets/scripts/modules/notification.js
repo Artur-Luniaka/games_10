@@ -6,5 +6,5 @@ export function showNotification(message, type = "info") {
   notif.className = `site-notification ${type}`;
   notif.textContent = message;
   document.body.appendChild(notif);
-  setTimeout(() => notif.remove(), 1800);
+  setTimeout(() => notif.remove(), 3300);
 }

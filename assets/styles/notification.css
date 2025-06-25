@@ -16,7 +16,7 @@
   z-index: 9999;
   opacity: 0;
   pointer-events: none;
-  animation: notif-fade-in 0.2s forwards, notif-fade-out 0.3s 1.5s forwards;
+  animation: notif-fade-in 0.2s forwards, notif-fade-out 0.3s 3s forwards;
 }
 .site-notification.success {
   background: linear-gradient(90deg, #22b573 60%, #ffb300 100%);
@@ -46,5 +46,21 @@
   }
   to {
     opacity: 0;
+  }
+}
+@media (max-width: 480px) {
+  .site-notification {
+    min-width: 180px;
+    max-width: 98vw;
+    font-size: 1.08rem;
+    padding: 1em 1.2em;
+  }
+}
+@media (max-width: 900px) {
+  .site-notification {
+    min-width: 90vw;
+    max-width: 98vw;
+    font-size: 1.12rem;
+    padding: 1em 1.2em;
   }
 }

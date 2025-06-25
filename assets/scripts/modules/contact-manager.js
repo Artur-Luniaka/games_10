@@ -3,6 +3,8 @@
  * Handles contact form functionality, validation, and submission
  */
 
+import { showNotification } from "./notification.js";
+
 class ContactManager {
   constructor() {
     this.form = null;
@@ -184,28 +186,24 @@ class ContactManager {
   async handleFormSubmission() {
     if (this.isSubmitting) return;
 
-    if (!this.validateForm()) {
-      this.showNotification("Please fix the errors in the form", "error");
-      return;
-    }
+    // Валидация только для визуала, не блокирует отправку
+    this.validateForm();
 
     this.isSubmitting = true;
     this.showLoadingState();
 
     try {
-      // Simulate form submission
+      // Симуляция отправки
       await this.simulateSubmission();
 
-      this.showNotification(
+      showNotification(
         "Message sent successfully! We'll get back to you soon.",
         "success"
       );
+      window.scrollTo({ top: 0, behavior: "smooth" });
       this.resetForm();
     } catch (error) {
-      this.showNotification(
-        "Failed to send message. Please try again.",
-        "error"
-      );
+      showNotification("Failed to send message. Please try again.", "error");
     } finally {
       this.isSubmitting = false;
       this.hideLoadingState();
@@ -234,7 +232,6 @@ class ContactManager {
     submitBtn.disabled = true;
     btnText.textContent = "Sending...";
     btnIcon.textContent = "⏳";
-    submitBtn.classList.add("loading");
   }
 
   hideLoadingState() {
@@ -245,7 +242,6 @@ class ContactManager {
     submitBtn.disabled = false;
     btnText.textContent = "Send Message";
     btnIcon.textContent = "→";
-    submitBtn.classList.remove("loading");
   }
 
   resetForm() {
@@ -263,49 +259,6 @@ class ContactManager {
     errorFields.forEach((field) => {
       field.classList.remove("error");
     });
-  }
-
-  showNotification(message, type = "info") {
-    // Create notification element
-    const notification = document.createElement("div");
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-      <div class="notification-content">
-        <span class="notification-icon">${this.getNotificationIcon(type)}</span>
-        <span class="notification-message">${message}</span>
-        <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
-      </div>
-    `;
-
-    // Add to page
-    document.body.appendChild(notification);
-
-    // Animate in
-    setTimeout(() => {
-      notification.classList.add("show");
-    }, 100);
-
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-      if (notification.parentElement) {
-        notification.classList.remove("show");
-        setTimeout(() => {
-          if (notification.parentElement) {
-            notification.remove();
-          }
-        }, 300);
-      }
-    }, 5000);
-  }
-
-  getNotificationIcon(type) {
-    const icons = {
-      success: "✅",
-      error: "❌",
-      warning: "⚠️",
-      info: "ℹ️",
-    };
-    return icons[type] || icons.info;
   }
 
   // Newsletter subscription handling
